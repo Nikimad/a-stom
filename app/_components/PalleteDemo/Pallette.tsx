@@ -1,19 +1,63 @@
 export default function PaletteDemo() {
   const colors = [
     { name: "Primary", value: "#2563EB", class: "bg-brand-primary" },
+    {
+      name: "Primary Hover",
+      value: "#1D4ED8",
+      class: "bg-brand-primary-hover",
+    },
+    {
+      name: "Primary Active",
+      value: "#1E40AF",
+      class: "bg-brand-primary-active",
+    },
+    {
+      name: "Primary Disabled",
+      value: "#93C5FD",
+      class: "bg-brand-primary-disabled",
+    },
+
     { name: "Accent", value: "#06B6D4", class: "bg-brand-accent" },
+    { name: "Accent Hover", value: "#0891B2", class: "bg-brand-accent-hover" },
+    {
+      name: "Accent Active",
+      value: "#0E7490",
+      class: "bg-brand-accent-active",
+    },
+    {
+      name: "Accent Disabled",
+      value: "#67E8F9",
+      class: "bg-brand-accent-disabled",
+    },
+
     { name: "Background", value: "#FFFFFF", class: "bg-brand-background" },
-    { name: "Light Background", value: "#E0F2FE", class: "bg-brand-light" },
-    { name: "Text", value: "#1E293B", class: "bg-brand-text" },
+    {
+      name: "Background Light",
+      value: "#E0F2FE",
+      class: "bg-brand-background-light",
+    },
+
+    { name: "Text Primary", value: "#1E293B", class: "bg-brand-text" },
+    {
+      name: "Text Disabled",
+      value: "#94A3B8",
+      class: "bg-brand-text-disabled",
+    },
+
+    { name: "Border", value: "#E2E8F0", class: "bg-brand-border" },
+
+    { name: "Success", value: "#10B981", class: "bg-status-success" },
+    { name: "Error", value: "#EF4444", class: "bg-status-error" },
+    { name: "Warning", value: "#F59E0B", class: "bg-status-warning" },
   ];
 
   return (
-    <div className="p-8 bg-brand-background text-brand-text max-w-3xl mx-auto">
-      <div className="flex justify-start mb-4">
+    <div className="p-8 bg-brand-background text-brand-text max-w-4xl mx-auto">
+      <div className="flex relative justify-start mb-4 w-[40px] h-[48px] overflow-hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 200 200"
-          style={{ width: "48px", height: "48px" }}
+          className="absolute left-[-4px] w-[48px] h-[48px]"
         >
           <defs>
             <linearGradient id="a" x1="0%" x2="100%" y1="0%" y2="100%">
@@ -41,14 +85,18 @@ export default function PaletteDemo() {
         {colors.map((color) => (
           <div
             key={color.name}
-            className="flex basis-55 grow-1 items-center gap-4 p-4 rounded-lg border shadow-sm"
+            className="flex basis-50 grow-1 items-center gap-4 p-4 rounded-lg border border-brand-border shadow-sm"
           >
-            <div className={`w-16 h-16 rounded-md border ${color.class}`} />
+            <div
+              className={`w-16 h-16 rounded-md border border-brand-border ${color.class}`}
+            />
 
             <div className="flex flex-col">
-              <span className="font-medium">{color.name}</span>
-              <span className="text-sm opacity-70">{color.value}</span>
-              <span className="text-xs opacity-60">
+              <span className="font-medium text-brand-text">{color.name}</span>
+              <span className="text-sm opacity-70 text-brand-text">
+                {color.value}
+              </span>
+              <span className="text-xs opacity-60 text-brand-text">
                 {color.class.replace("bg-", "")}
               </span>
             </div>
