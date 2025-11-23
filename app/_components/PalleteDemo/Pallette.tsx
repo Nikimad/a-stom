@@ -52,7 +52,7 @@ const colors = [
 
 export default function PaletteDemo() {
   return (
-    <div className="p-8 bg-brand-background text-brand-text max-w-4xl mx-auto">
+    <div className="px-8 py-4 bg-brand-background text-brand-text max-w-4xl mx-auto">
       <div className="flex gap-4 items-center mb-4">
         <div
           className="flex relative justify-start w-[40px] h-[48px] overflow-hidden"
